@@ -1,0 +1,31 @@
+{
+  "name": "@kolang/interpreter",
+  "version": "0.0.1",
+  "description": "مفسر کلنگ کامپایل‌شده به WebAssembly برای اجرای کلنگ در مرورگر",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "kolang.wasm",
+    "wasm_exec.js",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "bash scripts/build.sh",
+    "prepublishOnly": "npm run build"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/faralidev/kolang-wasm"
+  },
+  "keywords": [
+    "kolang",
+    "کلنگ",
+    "wasm",
+    "webassembly",
+    "persian",
+    "interpreter"
+  ]
+}

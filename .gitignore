@@ -1,0 +1,10 @@
+node_modules/
+*.log
+.DS_Store
+.vscode/
+.idea/
+
+# خروجی‌های ساخت — توسط `npm run build` تولید می‌شوند (قبل از انتشار ساخته می‌شوند)
+kolang.wasm
+wasm_exec.js
+.kolang-wasm.tmp
