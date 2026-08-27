@@ -24,8 +24,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: faralidev/kolang
-          path: ../kolang
+          path: ./kolang
       - name: Build WASM
+        env:
+          KOLANG_REPO: ${{ github.workspace }}/kolang
         run: npm run build
       - name: Publish
         run: npm publish --provenance --access public

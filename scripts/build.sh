@@ -8,8 +8,10 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
-# Location of the Kolang interpreter repo — a sibling folder of this repo
-KOLANG_REPO="$REPO_DIR/../kolang"
+# Location of the Kolang interpreter repo — a sibling folder of this repo by
+# default (../kolang). In CI, set KOLANG_REPO to point at the checked-out copy
+# (e.g. ./kolang inside the workspace) so the build script can find it.
+KOLANG_REPO="${KOLANG_REPO:-"$REPO_DIR/../kolang"}"
 
 if ! command -v go >/dev/null 2>&1; then
   echo "Error: Go is not installed on this system." >&2
