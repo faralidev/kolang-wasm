@@ -28,7 +28,9 @@ jobs:
       - name: Build WASM
         env:
           KOLANG_REPO: ${{ github.workspace }}/kolang
-        run: npm run build
+        run: |
+          echo "KOLANG_REPO=$KOLANG_REPO"
+          KOLANG_REPO="$KOLANG_REPO" npm run build
       - name: Publish
         run: npm publish --provenance --access public
         env:
