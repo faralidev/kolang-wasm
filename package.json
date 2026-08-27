@@ -1,6 +1,6 @@
 {
   "name": "@kolang/interpreter",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "مفسر کلنگ کامپایل‌شده به WebAssembly برای اجرای کلنگ در مرورگر",
   "type": "module",
   "main": "index.js",
