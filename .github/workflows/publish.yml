@@ -11,6 +11,10 @@ jobs:
     permissions:
       contents: read
       id-token: write
+    env:
+      # Used by prepublishOnly → npm run build → scripts/build.sh to find the
+      # kolang interpreter source (checked out at ./kolang inside the workspace).
+      KOLANG_REPO: ${{ github.workspace }}/kolang
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
@@ -26,11 +30,7 @@ jobs:
           repository: faralidev/kolang
           path: ./kolang
       - name: Build WASM
-        env:
-          KOLANG_REPO: ${{ github.workspace }}/kolang
-        run: |
-          echo "KOLANG_REPO=$KOLANG_REPO"
-          KOLANG_REPO="$KOLANG_REPO" npm run build
+        run: npm run build
       - name: Publish
         run: npm publish --provenance --access public
         env:
