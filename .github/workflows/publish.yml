@@ -16,16 +16,16 @@ jobs:
       # kolang interpreter source (checked out at ./kolang inside the workspace).
       KOLANG_REPO: ${{ github.workspace }}/kolang
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-go@v6
         with:
           go-version: '1.27'
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          node-version: '24'
           registry-url: 'https://registry.npmjs.org'
       - name: Check out kolang interpreter (for WASM build)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: faralidev/kolang
           path: ./kolang
